@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Choisir un service</title>
+    <meta charset="UTF-8">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Caprasimo&family=Lora:ital,wght@0,600;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+
+</head>
+<style>
+  body {
+      background-color: #FFCF85;
+      background-size: cover;
+      
+    }
+    h1{
+      text-align: center;
+      font-family: 'Babylonica', cursive;
+font-family: 'Caprasimo', cursive;
+font-family: 'Lora', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+    }
+    .logo {
+      position: absolute;
+      top: 0;
+      right: 2px;
+      width: 100px; /* Adjust the width of your logo */
+      height: 150px; /* Adjust the height of your logo */
+      background-image: url('logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    
+    .comic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.comic-button:hover {
+  background-color: #fff;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+  box-shadow: 5px 5px 0px #ff5252;
+}
+
+.comic-button:active {
+  background-color: #fcf414;
+  box-shadow: none;
+  transform: translateY(4px);
+  
+}
+
+
+</style>
+<body>
+  <div class="logo"></div>
+  <br><br><br><br><br><br><br><br>
+    <h1 style="text-align: center; color: #ff0400;">Centre Services clients</h1>
+    <br><br><br>
+    <div style="text-align: center;">
+    <form action="process_form_frc.php" method="POST" target="_blank"> <!-- Ajouter target="_blank" -->
+        <input type="hidden" name="lang" value="<?php echo $_GET['lang']; ?>">
+        <select class="comic-button" id="serviceSelect" onclick="clearPlaceholder()" name="service">
+
+            <option value="" disabled selected hidden>Sélectionner un service</option>
+            <!-- pour ne pas figurer  "Sélectionner un service dans les choix"-->
+            <option value="E-facture">E-facture</option>
+            <option value="Redal Info">Redal Info</option>
+            <option value="Solutions Alternatives de paiement">Solutions Alternatives de paiement</option>
+            <option value="Localiser votre agence">Localiser votre agence</option>
+            <option value="Déposer mon courrier à distance">Déposer mon courrier à distance</option>
+        </select>
+        <button type="submit" class="comic-button">
+          <i class="fa fa-download" aria-hidden="true"></i>
+          Télécharger votre ticket</button>
+    </form>
+    </div>
+    <!--pour ne pas figurer  "Sélectionner un service dans les choix  -->
+    <script>
+        function clearPlaceholder() {
+          var selectElement = document.getElementById("serviceSelect");
+          if (selectElement.value === "") {
+            selectElement.remove(0);
+          }
+        }
+      </script>
+</body>
+
+</html>
+
+
+
+  
